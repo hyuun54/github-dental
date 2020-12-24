@@ -9,6 +9,7 @@
 <body>
 <%
 	String imsi = request.getContextPath() + "/tooth?command=main" ;
+	//주석
 	response.sendRedirect(imsi) ;
 %>
 </body>
