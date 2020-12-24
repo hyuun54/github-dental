@@ -9,7 +9,7 @@
 <body>
 <%
 	String imsi = request.getContextPath() + "/tooth?command=main" ;
-	//주석
+	//왜 pull이 안나오지 ㅇ
 	response.sendRedirect(imsi) ;
 %>
 </body>
