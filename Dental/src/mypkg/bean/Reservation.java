@@ -10,6 +10,13 @@ public class Reservation {
 	private String comments;
 	
 	
+	
+	@Override
+	public String toString() {
+		return "Reservation [no=" + no + ", name=" + name + ", rephone=" + rephone + ", sector=" + sector + ", redate="
+				+ redate + ", rehour=" + rehour + ", comments=" + comments + "]";
+	}
+
 	public Reservation() {
 		super();	
 	}
