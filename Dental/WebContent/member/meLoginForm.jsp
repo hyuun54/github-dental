@@ -15,7 +15,7 @@ form {
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 0px;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -60,6 +60,12 @@ span.psw, span.uid{
 	color: #f44336;
 }
 
+.err{
+	font-size : 10pt;
+	color:red;
+	font-weight: bolder;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw, span.uid{
@@ -79,13 +85,13 @@ span.psw, span.uid{
 	<input type="hidden" name="command" value="meLogin">
   <div class="container">
     <label for="uid"><b class="bClass">아이디</b></label>
-    <input type="text" placeholder="아이디를 입력해주세요." name="uid" required value="${requestScope.id}"
+    <input type="text" placeholder="아이디를 입력해주세요." name="id" value="${requestScope.id}"
     data-toggle="tooltip" data-placement="top" 
 								title="아이디는  4글자 이상 10글자 이하로 입력해 주세요.">
     <span class="err">${errid}</span>
-
+	<br><br>
     <label for="psw"><b class="bClass">비밀번호</b></label>
-    <input type="password" placeholder="비밀번호를 입력해주세요." name="psw" required value="${requestScope.password}"
+    <input type="password" placeholder="비밀번호를 입력해주세요." name="password" value="${requestScope.password}"
     data-toggle="tooltip" data-placement="top" 
 								title="비밀번호는  4글자 이상 10글자 이하로 입력해 주세요.">
     <span class="err">${errpassword}</span>
