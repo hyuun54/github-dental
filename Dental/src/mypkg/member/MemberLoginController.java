@@ -11,7 +11,10 @@ import mypkg.common.SuperClass;
 public class MemberLoginController extends SuperClass{
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//System.out.println("회원 로그인 호출됨");
+		super.doGet(request, response);
+		String gotopage = "/member/meLoginForm.jsp";
+		super.GotoPage(gotopage);
 	}
 	
 	@Override
