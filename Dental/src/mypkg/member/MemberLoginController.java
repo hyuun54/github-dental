@@ -6,7 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mypkg.bean.Member;
 import mypkg.common.SuperClass;
+import mypkg.dao.MemberDao;
 
 public class MemberLoginController extends SuperClass{
 	private String id = null;
@@ -25,16 +27,37 @@ public class MemberLoginController extends SuperClass{
 		this.id = request.getParameter("id");
 		this.password = request.getParameter("password");
 		
+		String gotopage = "";
+		
 		if (this.validate(request) == false) {
 			//유효성 검사 실패
-			String gotopage = "/member/meLoginForm.jsp";
+			gotopage = "/member/meLoginForm.jsp";
 			request.setAttribute("id", this.id);
 			request.setAttribute("password", this.password);
 			super.doPost(request, response);
 			super.GotoPage(gotopage);
 		}else {
 			//유효성 검사 문제 없음
+			MemberDao dao = new MemberDao();
+			Member bean = dao.SelectData(this.id, this.password);
 			
+			super.doPost(request, response);
+			
+			if (bean == null) {
+				//아이디 패스워드 일치하는 항목 없음
+				gotopage = "member/meLoginForm.jsp";
+				String errfail = "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다";
+				request.setAttribute("errfail", errfail);
+				
+				super.GotoPage(gotopage);
+			} else {
+				//로그인 성공
+				//bean을 session에 loginfo로 바인딩 
+				super.session.setAttribute("loginfo", bean);
+				gotopage = "common/main.jsp";
+				
+				super.GotoPage(gotopage);
+			}
 		}
 	}
 	

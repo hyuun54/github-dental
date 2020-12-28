@@ -95,6 +95,7 @@ span.psw, span.uid{
     data-toggle="tooltip" data-placement="top" 
 								title="비밀번호는  4글자 이상 10글자 이하로 입력해 주세요.">
     <span class="err">${errpassword}</span>
+    <span class="err">${errfail}</span>
     
     <button type="submit">로그인</button>
     <label>

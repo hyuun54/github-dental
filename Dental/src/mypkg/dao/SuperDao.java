@@ -26,7 +26,7 @@ public class SuperDao {
 		}
 	}
 
-	private Connection getConnection() {
+	protected Connection getConnection() {
 		// 커넥션 객체 생성
 		try {
 			return DriverManager.getConnection(url, id, password);
@@ -36,7 +36,7 @@ public class SuperDao {
 		}
 	}
 	
-	public void closeConnection() {
+	protected void closeConnection() {
 		// 커넥션 객체 닫기
 		try {
 			if(conn != null) {conn.close();}
