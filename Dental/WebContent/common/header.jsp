@@ -94,30 +94,59 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarClick">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">병원 소개</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">진료 소개</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">온라인상품</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">커뮤니티</a></li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">병원 소개<span class="caret"></span></a>
+							<ul class="dropdown-menu menuList">
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">공지 사항</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">병원 소개</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">의료진 소개</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">오시는 길</a></li>
+							</ul>
+						</li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">진료 소개<span class="caret"></span></a>
+							<ul class="dropdown-menu menuList">
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">시술 과정</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">진료 소개</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">진료 시간 안내</a></li>
+							</ul>
+						</li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">온라인 상품<span class="caret"></span></a>
+							<ul class="dropdown-menu menuList">
+								<li><a class="nav-link" href="<%=NoForm%>prList">상품 목록</a></li>
+								<li><c:if test="${whologin != 0}">
+									<a href="<%=NoForm%>mallHistory">나의 쇼핑 내역</a>
+								</c:if></li>
+								<li><c:if test="${whologin != 0}">
+									<a href="<%=NoForm%>mallList">장바구니 보기</a>
+								</c:if></li>
+							</ul>
+						</li>
+                    	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">상담/예약<span class="caret"></span></a>
+							<ul class="dropdown-menu menuList">
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">온라인 상담</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">온라인 예약</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>meInsert">고객의 소리</a></li>
+							</ul>
+						</li>
                     	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">로그인<span class="caret"></span></a>
-							<ul class="dropdown-menu">
+							<ul class="dropdown-menu menuList">
 								<li><c:if test="${whologin == 0}">
-										<a class="menuList nav-link" href="<%=NoForm%>meInsert">회원 가입</a>
+										<a class="nav-link" href="<%=NoForm%>meInsert">회원 가입</a>
 									</c:if> <c:if test="${whologin != 0}">
-										<a class="menuList nav-link" href="<%=NoForm%>meUpdate&id=${sessionScope.loginfo.id}">회원 정보 수정</a>
+										<a class="nav-link" href="<%=NoForm%>meUpdate&id=${sessionScope.loginfo.id}">회원 정보 수정</a>
 									</c:if></li>
 								<li><c:if test="${whologin == 0}">
-										<a class="menuList nav-link" href="<%=NoForm%>meLogin">로그인</a>
+										<a class="nav-link" href="<%=NoForm%>meLogin">로그인</a>
 									</c:if> <c:if test="${whologin != 0}">
-										<a class="menuList nav-link" href="<%=NoForm%>meLogout">로그 아웃</a>
+										<a class="nav-link" href="<%=NoForm%>meLogout">로그 아웃</a>
 									</c:if></li>
 								<li><c:if test="${whologin == 1}">
-										<a class="menuList nav-link" href="<%=NoForm%>meDelete&id=${sessionScope.loginfo.id}">회원 탈퇴</a>
+										<a class="nav-link" href="<%=NoForm%>meDelete&id=${sessionScope.loginfo.id}">회원 탈퇴</a>
 									</c:if></li>
 								<li><c:if test="${whologin == 2}">
-										<a class="menuList nav-link" href="<%=NoForm%>meList">회원 목록 보기</a>
+										<a class="nav-link" href="<%=NoForm%>meList">회원 목록 보기</a>
 									</c:if></li>
 								<li><c:if test="${whologin == 1}">
-										<a class="menuList nav-link" href="<%=NoForm%>meDetailView&id=${sessionScope.loginfo.id}">회원 상세 보기</a>
+										<a class="nav-link" href="<%=NoForm%>meDetailView&id=${sessionScope.loginfo.id}">회원 상세 보기</a>
 									</c:if></li>
 							</ul>
 						</li>
