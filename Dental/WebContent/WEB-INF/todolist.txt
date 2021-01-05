@@ -11,18 +11,24 @@ meDetailView=mypkg.member.MemberDetailViewController
 meUpdate=mypkg.member.MemberUpdateController
 meDelete=mypkg.member.MemberDeleteController
 #### Board Section ######################################################
-#boList=mypkg.board.BoardListController
-#boInsert=mypkg.board.BoardInsertController
-#boDetailView=mypkg.board.BoardDetailViewController
-#boDelete=mypkg.board.BoardDeleteController
-#boUpdate=mypkg.board.BoardUpdateController
-#boReply=mypkg.board.BoardReplyController
+boCounselList=mypkg.board.BoardCounselListController
+boInsert=mypkg.board.BoardInsertController
+boDetailView=mypkg.board.BoardDetailViewController
+boDelete=mypkg.board.BoardDeleteController
+boUpdate=mypkg.board.BoardUpdateController
+boReply=mypkg.board.BoardReplyController
+boIntro=mypkg.board.BoardIntroController
+boDoctor=mypkg.board.BoardDoctorController
+boJinryoIntro=mypkg.board.BoardJinryoIntroController
+boJinryoProcess=mypkg.board.BoardJinryoProcessController
+boJinryoTime=mypkg.board.BoardJinryoTimeController
+boDirection=mypkg.board.BoardDirectionController
 #### Product Section ######################################################
-#prList=mypkg.product.ProductListController
-#prDetailView=mypkg.product.ProductDetailViewController
-#prInsert=mypkg.product.ProductInsertController
-#prDelete=mypkg.product.ProductDeleteController
-#prUpdate=mypkg.product.ProductUpdateController
+prList=mypkg.product.ProductListController
+prDetailView=mypkg.product.ProductDetailViewController
+prInsert=mypkg.product.ProductInsertController
+prDelete=mypkg.product.ProductDeleteController
+prUpdate=mypkg.product.ProductUpdateController
 #### Mall Section ######################################################
 #mallInsert=mypkg.mall.MallInsertController
 #mallList=mypkg.mall.MallListController
