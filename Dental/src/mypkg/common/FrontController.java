@@ -52,7 +52,7 @@ public class FrontController extends HttpServlet {
 
 	protected void doprocess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getParameter("command");
-		System.out.println("커맨드 파라미터 : " + command);
+		System.out.println("커맨드 파라미터 : " + command);	
 		
 		SuperController controller = this.todolist.get(command);
 		

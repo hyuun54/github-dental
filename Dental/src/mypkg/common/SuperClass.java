@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class SuperClass implements SuperController, Validator{
+	public static final String PREFIX = "err";
 	private HttpServletRequest request = null;
 	private HttpServletResponse response = null;
 	protected HttpSession session = null;
@@ -23,7 +24,7 @@ public class SuperClass implements SuperController, Validator{
 	
 	@Override
 	public boolean validate(HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
@@ -42,8 +43,10 @@ public class SuperClass implements SuperController, Validator{
 		RequestDispatcher dispatcher = this.request.getRequestDispatcher(url);
 		
 		try {
-			dispatcher.forward(request, response);
-		} catch (Exception e) {
+			dispatcher.forward(this.request, this.response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

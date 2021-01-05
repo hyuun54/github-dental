@@ -2,14 +2,14 @@
 main=mypkg.common.MainController
 #### Member Section ######################################################
 meLogin=mypkg.member.MemberLoginController
-#meList=mypkg.member.MemberListController
-#meInsert=mypkg.member.MemberInsertController
-#meLogout=mypkg.member.MemberLogoutController
-#meIdcheck=mypkg.member.MemberIdcheckController
-#meZipcheck=mypkg.member.MemberZipcheckController
-#meDetailView=mypkg.member.MemberDetailViewController
-#meUpdate=mypkg.member.MemberUpdateController
-#meDelete=mypkg.member.MemberDeleteController
+meList=mypkg.member.MemberListController
+meInsert=mypkg.member.MemberInsertController
+meLogout=mypkg.member.MemberLogoutController
+meIdcheck=mypkg.member.MemberIdcheckController
+meZipcheck=mypkg.member.MemberZipcheckController
+meDetailView=mypkg.member.MemberDetailViewController
+meUpdate=mypkg.member.MemberUpdateController
+meDelete=mypkg.member.MemberDeleteController
 #### Board Section ######################################################
 #boList=mypkg.board.BoardListController
 #boInsert=mypkg.board.BoardInsertController
