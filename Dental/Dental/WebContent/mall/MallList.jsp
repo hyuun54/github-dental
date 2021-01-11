@@ -12,6 +12,12 @@
 <head>
 <meta charset="UTF-8">
 <title>BootStrap Sample</title>
+<style>
+#pre{
+	margin-top: 150px;]
+}
+
+</style>
 <script type="text/javascript">
 	function cartEdit(num) { /* 해당 상품에 대한 주문 수량 수정 */
 		var stock = document.getElementById("stock").value;
@@ -20,7 +26,7 @@
 </script>
 </head>
 <body>
-	<div class="container col-sm-offset-<%=myoffset%> col-sm-<%=mywidth%>">
+	<div id="pre" class="container col-sm-offset-<%=myoffset%> col-sm-<%=mywidth%>">
 		<div class="panel panel-default panel-primary">
 			<div class="panel-heading">
 				<h4>장바구니 보기</h4>

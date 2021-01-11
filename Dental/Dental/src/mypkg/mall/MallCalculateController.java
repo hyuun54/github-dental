@@ -45,6 +45,6 @@ public class MallCalculateController extends SuperClass{
 			super.session.setAttribute( "message" , "결재를 완료했읍니다.\n감사합니다." );		
 		}
 		
-		new MallHistoryController().doGet(request, response);
+		new MallOrderController().doGet(request, response);
 	}
 }

@@ -116,7 +116,7 @@
                         			</c:if></li>
 								<li><a class="nav-link" href="<%=NoForm%>prList">목록 보기</a></li>
 								<li><c:if test="${whologin != 0}">
-									<a class="nav-link" href="<%=NoForm%>mallHistory">나의 쇼핑 내역</a>
+									<a class="nav-link" href="<%=NoForm%>mallOrder">나의 쇼핑 내역</a>
 								</c:if></li>
 								<li><c:if test="${whologin != 0}">
 									<a class="nav-link" href="<%=NoForm%>mallList">장바구니 보기</a>

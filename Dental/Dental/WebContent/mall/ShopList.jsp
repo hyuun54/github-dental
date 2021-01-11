@@ -10,9 +10,15 @@
 <head>
 <meta charset="UTF-8">
 <title>BootStrap Sample</title>
+<style>
+#pre{
+	margin-top: 150px;]
+}
+
+</style>
 </head>
 <body>
-	<div class="container col-md-offset-<%=offset%> col-md-<%=content%>">
+	<div id="pre" class="container col-md-offset-<%=offset%> col-md-<%=content%>">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">${sessionScope.loginfo.name}(${sessionScope.loginfo.id})
