@@ -1,6 +1,7 @@
 package mypkg.board;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ public class BoardDetailViewController extends SuperClass{
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Member memberBean = null;
 		this.no = Integer.parseInt(request.getParameter("no"));
 		
 		this.dao = new BoardDao();
@@ -36,9 +38,10 @@ public class BoardDetailViewController extends SuperClass{
 				request.getParameter("keyword")
 				);
 		
+		
 		super.doGet(request, response);
 		if (super.session.getAttribute("loginfo") != null) {
-			Member memberBean = (Member) super.session.getAttribute("loginfo");
+			memberBean = (Member) super.session.getAttribute("loginfo");
 			if (memberBean.getId().equals("admin")) {
 				//관리자 아이디의 경우 비밀번호 입력 생략
 				String gotopage = "/board/boardDetailView.jsp";
@@ -51,12 +54,21 @@ public class BoardDetailViewController extends SuperClass{
 		
 		
 		if (this.bean != null) {
-			
-			request.setAttribute("parameters", parameters.toString());
-			
-			super.doGet(request, response);
-			String gotopage = "/board/passwordForm.jsp";
-			super.GotoPage(gotopage);
+			if (this.bean.getReply().equals("답변")) {
+				//답변의 경우 비밀번호 생략
+				String gotopage = "/board/boardDetailView.jsp";
+				request.setAttribute("bean", this.bean);
+				
+				super.doGet(request, response);
+				super.GotoPage(gotopage);
+			}else {
+				//답변이 아닐 경우 비밀번호 입력창
+				request.setAttribute("parameters", parameters.toString());
+				
+				super.doGet(request, response);
+				String gotopage = "/board/passwordForm.jsp";
+				super.GotoPage(gotopage);
+			}
 		}else {
 			new BoardCounselListController().doGet(request, response);
 		}

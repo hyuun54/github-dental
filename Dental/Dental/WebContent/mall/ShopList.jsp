@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>BootStrap Sample</title>
-<style>
+<style type="text/css">
 #pre{
 	margin-top: 150px;]
 }

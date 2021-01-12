@@ -8,7 +8,8 @@
 %>
 <html>
 <head>
-<style>
+<style type="text/css">
+/*.panel-body{ margin-bottom: -30px;}*/
 #pre{
 	margin-top: 150px;]
 }
@@ -16,7 +17,7 @@
 </style>
 </head>
 <body>
-	<div id="pre" class="container col-md-offset-<%=offset%> col-md-<%=content%>">
+	<div id="pre"class="container col-md-offset-<%=offset%> col-md-<%=content%>">
 		<h1>${sessionScope.loginfo.name}님의 주문 상세 내역</h1>
 		<hr>
 		<p>${sessionScope.loginfo.name}

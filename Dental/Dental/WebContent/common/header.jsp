@@ -96,7 +96,7 @@
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">병원 소개<span class="caret"></span></a>
 							<ul class="dropdown-menu menuList">
-								<li><a class="nav-link" href="<%=NoForm%>meInsert">공지 사항</a></li>
+								<li><a class="nav-link" href="<%=NoForm%>noList">공지 사항</a></li>
 								<li><a class="nav-link" href="<%=NoForm%>boIntro">병원 소개</a></li>
 								<li><a class="nav-link" href="<%=NoForm%>boDoctor">의료진 소개</a></li>
 								<li><a class="nav-link" href="<%=NoForm%>boDirection">오시는 길</a></li>

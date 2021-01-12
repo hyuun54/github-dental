@@ -68,7 +68,7 @@ public class MemberDao extends SuperDao{
 	public int InsertData(Member bean) {
 		System.out.println( bean.toString() ); 
 		String sql = " insert into members(id, name, password, birthdate , gender, zipcode, address1, address2, phone, email ,mpoint) ";
-		sql += " values( ?, ?, ?, to_date(?, 'yyyy/MM/dd'), ?, ?, ?, ?, ?, ?, ?,) ";	
+		sql += " values( ?, ?, ?, to_date(?, 'yyyy/MM/dd'), ?, ?, ?, ?, ?, ?, ? ) ";	
 		
 		PreparedStatement pstmt = null ;
 		int cnt = -99999 ;

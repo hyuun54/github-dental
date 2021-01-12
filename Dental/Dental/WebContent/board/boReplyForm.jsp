@@ -10,28 +10,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>BootStrap Sample</title>
+	<meta charset="UTF-8">
+	<title>BootStrap Sample</title>
+	<style type="text/css">
+	hr{
+		background-color: #495057;
+		color: #495057;
+		display: block;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	 	margin-left: 0px;
+		margin-right: auto;
+		border-style: inset;
+		border-width: 1.5px;
+		width: 80%;
+	}
+	</style>
 </head>
 <body>
+	<br><br><br>
+	<br><br><br>
 	<div class="container col-sm-offset-<%=myoffset%> col-sm-<%=mywidth%>">
 		<div class="panel panel-default panel-primary">
 			<div class="panel-heading">
-				<h4>답글 달기</h4>
+				<h4>답변 작성</h4>
 			</div>
+			<hr>
 			<div class="panel-body">
 				<form class="form-horizontal" role="form"
 					action="<%=YesForm%>" method="post">
-					<input type="text" name="command" value="boReply"> 
-					<input type="text" name="pageNumber"
+					<input type="hidden" name="command" value="boReply"> 
+					<input type="hidden" name="pageNumber"
 						value="<%=request.getParameter("pageNumber")%>">
-						<input type="text" name="pageSize"
+						<input type="hidden" name="pageSize"
 						value="<%=request.getParameter("pageSize")%>"> <input
-						type="text" name="groupno"
-						value="<%=request.getParameter("groupno")%>"> <input
-						type="text" name="orderno"
-						value="<%=request.getParameter("orderno")%>">
-						<input type="text" name="depth"
+						type="hidden" name="groupno"
+						value="<%=request.getParameter("groupno")%>">
+						<input type="hidden" name="depth"
 						value="<%=request.getParameter("depth")%>">
 					<div class="form-group">
 						<label class="control-label col-sm-<%=formleft%>" for="writer">작성자</label>
@@ -54,13 +69,10 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-<%=formleft%>" for="password">비밀
-							번호</label>
 						<div class="col-sm-<%=formright%>">
-							<input type="password" class="form-control" name="password"
+							<input type="hidden" class="form-control" name="password"
 								id="password" placeholder="비밀 번호를 넣어 주셔용^^"
-								 value="${bean.password}">
-								 <span class="err">${errpassword}</span>
+								 value="1234">
 						</div>
 					</div>
 					<div class="form-group">
@@ -73,19 +85,10 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-<%=formleft%>" for="regdate">작성
-							일자</label>
-						<div class="col-sm-<%=formright%>">
-							<input type="datetime" class="form-control" name="regdate"
-								id="regdate" placeholder="작성 일자" value="${bean.regdate}">
-								<span class="err">${errregdate}</span>
-						</div>
-					</div>
-					<div class="form-group">
-						<div align="center" class="col-sm-offset-3 col-sm-6">
-							<button class="btn btn-default" type="submit">답변하기</button>
+						<div class="col-sm-offset-3 col-sm-6">
+							<button class="btn btn-primary" type="submit">답변하기</button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<button class="btn btn-default" type="reset">취소</button>
+							<button class="btn btn-primary" type="button" onclick="gotoBack();">취소</button>
 						</div>
 					</div>
 				</form>
@@ -97,7 +100,9 @@
 		$(document).ready(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 		});
+		function gotoBack(){
+			location.href='<%=NoForm%>boCounselList&${requestScope.parameters}';
+		}
 	</script>
-
 </body>
 </html>

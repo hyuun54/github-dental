@@ -12,11 +12,10 @@
 <head>
 <meta charset="UTF-8">
 <title>BootStrap Sample</title>
-<style>
+<style type="text/css">
 #pre{
 	margin-top: 150px;]
 }
-
 </style>
 <script type="text/javascript">
 	function cartEdit(num) { /* 해당 상품에 대한 주문 수량 수정 */

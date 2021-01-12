@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../common/header.jsp"%>
+ <%@ include file="../common/header.jsp"%>
 
 <!doctype html>
+ 
  <%
 	int myoffset = 2;
 	int mywidth = twelve - 2 * myoffset;
@@ -22,7 +23,7 @@
  </style>
  <script type="text/javascript">
 		function checkDuplicateId(  ){
-			var id = document.myform.id.v alue ;
+			var id = document.myform.id.value ;
 			if( id.length == 0 ){
 				alert('아이디를 입력해 주세요') ;
 				document.myform.id.focus() ; 
@@ -167,7 +168,8 @@
                            
                         </div>
                     </div>
-            </div>           
+            </div>
+           
         </div>
 
 	<script type="text/javascript">

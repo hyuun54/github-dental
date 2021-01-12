@@ -23,6 +23,12 @@ boJinryoIntro=mypkg.board.BoardJinryoIntroController
 boJinryoProcess=mypkg.board.BoardJinryoProcessController
 boJinryoTime=mypkg.board.BoardJinryoTimeController
 boDirection=mypkg.board.BoardDirectionController
+#### notice Section ######################################################
+noList=mypkg.notice.NoticeListController
+noInsert=mypkg.notice.NoticeInsertController
+noDetailView=mypkg.notice.NoticeDetailViewController
+noDelete=mypkg.notice.NoticeDeleteController
+noUpdate=mypkg.notice.NoticeUpdateController
 #### Product Section ######################################################
 prList=mypkg.product.ProductListController
 prDetailView=mypkg.product.ProductDetailViewController

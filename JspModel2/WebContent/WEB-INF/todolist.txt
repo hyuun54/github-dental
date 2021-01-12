@@ -44,3 +44,4 @@ viewExam05=mypkg.composite.View05Controller
 #viewExam07=mypkg.composite.View07Controller
 #viewExam08=mypkg.composite.View08Controller
 #viewExam09=mypkg.composite.View09Controller
+#### Notice Section ######################################################

@@ -6,183 +6,160 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<title>오시는 길</title>
+	<style type="text/css">
+	hr{
+		background-color: #495057;
+		color: #495057;
+		display: block;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	 	margin-left: 0px;
+		margin-right: auto;
+		border-style: inset;
+		border-width: 1.5px;
+		width: 80%;
+	}
+	.map-direction{
+		padding-top: 10px;
+	}
+	.container-align{
+		margin-left: 15%;
+	}
+	</style>
+	<script>
+		function gotomap(){
+			var mywidth = 1000;
+			var myheight = 600;
+			
+			var newwidth = (screen.width - mywidth)/2;
+			var newheight = (screen.height - myheight)/2;
+			
+			var options = 'width=' + mywidth;
+			options += ',height=' + myheight;
+			options += ',left=' + newwidth;
+			options += ',top=' + newheight;
+
+			window.open('https://map.naver.com/v5/entry/place/1540600356?c=14130564.6751390,4516452.0080504,17,0,0,3,dh', 'mytitle', options);
+		}
+	</script>
 </head>
 <body>
 	<br><br><br>
-	<br><br><br>
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<h2>오시는 길</h2>
-
+	<section class="page-section bg-light" id="direction">
+	    <div class="container">
+	       <div class="text-center">
+	           <h2 class="section-heading text-uppercase">오시는 길</h2>
+				<br><br>
+	       </div>
 		</div> 
-	</div> 
-<div id="map_canvas"></div>
-
-
-
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			
-
-		</div> 
-	</div> 
-<div class="wpb_row vc_row-fluid directions-wrap first"style="text-align:left;"><div class="container"><div class="row">
-	<div class="vc_span6 directions-info-wrap wpb_column column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<ul class="directions-info">
-<li>
-<div class="vertical">
-<div class="vertical-cell">
-<p class="first">위치</p>
-<p class="second">청담동 학동사거리</p>
-</div>
-</div>
-</li>
-<li>
-<div class="vertical">
-<div class="vertical-cell">
-<p class="first">주소</p>
-<p class="second">서울특별시 강남구 도산대로 410(청담동 2-6)</p>
-</div>
-</div>
-</li>
-<li>
-<div class="vertical">
-<div class="vertical-cell">
-<p class="first">전화</p>
-<p class="second">02-512-0700</p>
-</div>
-</div>
-</li>
-<li>
-<div class="vertical">
-<div class="vertical-cell">
-<p class="first"><span class="green">7호선</span></p>
-<p class="second">7호선 강남구청역 4번출구에서 10분 거리</p>
-</div>
-</div>
-</li>
-<li>
-<div class="vertical">
-<div class="vertical-cell">
-<p class="first"><span class="yellow">분당선</span></p>
-<p class="second">분당선 압구정로데오역 4번 출구에서 5분 거리</p>
-</div>
-</div>
-</li>
-</ul>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-
-	<div class="vc_span6 directions-map-wrap wpb_column column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_single_image wpb_content_element vc_align_right">
-		<div class="wpb_wrapper">
-			
-			<img width="503" height="273" src="http://splant.co.kr/wp-content/uploads/2015/06/splant-map-39834.jpg" class=" vc_box_border_grey attachment-full" alt="splant-map-39834" />
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div></div></div><div class="wpb_row vc_row-fluid directions-wrap second vc_custom_1438929097602"style="text-align:left;"><div class="container"><div class="row">
-	<div class="vc_span12 directions-map-btn wpb_column column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<p><a class="map-show" href="#">약도보기</a> <a class="map-print" href="#">약도인쇄</a> <a class="map-sms" href="#">약도 SMS전송</a></p>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div></div></div><div class="wpb_row vc_row-fluid before_img_box_for_rwd spidochescaler_wrap vc_custom_1478592097055"style="text-align:left;"><div class="container"><div class="row">
-	<div class="vc_span12 wpb_column column_container vc_custom_1439863209555">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_text_column wpb_content_element  vc_custom_1438935561617">
-		<div class="wpb_wrapper">
-			<div class="directions-header">
-<h4>버스이용시</h4>
-</div>
-
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element  vc_custom_1438939748487">
-		<div class="wpb_wrapper">
-			<div class="directions-header">영동고등학교 앞 정류장 하차 후 하나은행을 끼고 우회전하시면 에스플란트치과병원 건물이 보입니다</div>
-
-		</div> 
-	</div> 
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<div class="directions-bus">
-<table>
-<caption>버스이용시</caption>
-<colgroup>
-<col class="station" />
-<col class="bluebus" />
-<col class="bluebus-num" />
-<col class="greenbus" />
-<col class="greenbus-num" /> </colgroup>
-<tbody>
-<tr>
-<th scope="row">영동고등학교 / 현대아파트 앞 정류소</th>
-<td><span class="bluebox">간선</span></td>
-<td>301, 351, 472</td>
-<td><span class="greenbox">지선</span></td>
-<td>4412, 3011</td>
-</tr>
-<tr>
-<th scope="row">영동고등학교 앞 정류소</th>
-<td><span class="bluebox">간선</span></td>
-<td>301, 351, 472</td>
-<td><span class="greenbox">지선</span></td>
-<td>4412, 3011</td>
-</tr>
-<tr>
-<th scope="row">영동소방파출소 앞 정류소</th>
-<td><span class="bluebox">간선</span></td>
-<td>301, 351, 472</td>
-<td><span class="greenbox">지선</span></td>
-<td>4412, 3011</td>
-</tr>
-<tr>
-<th scope="row">씨네시티 앞 정류소</th>
-<td><span class="bluebox">간선</span></td>
-<td>145</td>
-<td><span class="greenbox">지선</span></td>
-<td>4212, 3011</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div></div></div><div class="wpb_row vc_row-fluid"style="text-align:left;"><div class="container"><div class="row">
-	<div class="vc_span12 img_box_for_rwd wpb_column column_container">
-		<div class="wpb_wrapper">
-			
-	<div class="wpb_single_image wpb_content_element vc_align_center">
-		<div class="wpb_wrapper">
-			
-			<a href="http://splant.co.kr/wp-content/uploads/2015/06/how_to_get_hospital_by_using_bus.gif"><img width="925" height="290" src="http://splant.co.kr/wp-content/uploads/2015/06/how_to_get_hospital_by_using_bus.gif" class=" vc_box_border_grey attachment-full" alt="버스이용시" /></a>
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div></div></div>
+		
+		<div class="container-align">
+	        <hr>
+			<div class="container" style="text-align:left;">
+				<div class="row">
+					<div class="col-lg-4">
+		            	<div class="detail-direction">
+							<ul class="directions-info">
+								<li>
+									<p class="first">위치</p>
+									<p class="second">서강대 정문</p>
+								</li>
+								<li>
+									<p class="first">주소</p>
+									<p class="second">서울 마포구 백범로 23 구프라자 3층</p>
+								</li>
+								<li>
+									<p class="first">전화</p>
+									<p class="second">02-707-1480</p>
+								</li>
+								<li>
+									<p class="first"><span class="green">7호선</span></p>
+									<p class="second">2호선 신촌역 6번출구에서 8분 거리</p>
+								</li>
+								<li>
+									<p class="first"><span class="yellow">분당선</span></p>
+									<p class="second">경의중앙선 서강대역 1번출구에서 9분 거리</p>
+								</li>
+							</ul>
+		
+						</div> 
+					</div> 
+					
+					<div class="col-lg-4">
+				    	<div class="map-direction">
+							<img width="503" height="403" src="${contextPath}/assets/img/map.png" class="mx-auto" alt="지도" />
+						</div> 
+					</div> 
+				</div> 
+			</div> 
+			<div class="container" style="text-align:left;">
+				<div class="row">
+					<div class="col-lg-4">
+		            	<div class="maplink">
+							<br>
+							<button class="btn btn-primary" type="button" onclick="gotomap();">약도보기</button>
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<br><br>
+			<div class="container">
+		       <div class="text-left">
+		           <h4 class="text-uppercase">버스 이용시</h4>
+		       </div>
+			</div>
+			<div class="container" style="text-align:left;">
+				<div class="row">
+					<div class="col-lg-12">
+		            	<div class="maplink">
+							서강대학교 정거장에서 내린 후 서강대학교 정문을 기준으로 왼쪽 한블록 건너에 건물이 보입니다.
+						</div> 
+					</div> 
+				</div> 
+			</div> 
+			<div class="container" style="text-align:left;">
+				<div class="row">
+					<div class="col-lg-9">
+		            	<div class="bustable">
+							<table class="table table-bordered">
+							<colgroup>
+								<col class="station" />
+								<col class="bluebus" />
+								<col class="bluebus-num" />
+								<col class="greenbus" />
+								<col class="greenbus-num" /> 
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">서강대학교 앞 정류소</th>
+									<td><span class="bluebox">간선</span></td>
+									<td>921, 110A, 604, 740, 753</td>
+									<td><span class="greenbox">지선</span></td>
+									<td>5714, 6712, 7016, 7613</td>
+								</tr>
+								<tr>
+									<th scope="row">신촌로터리 앞 정류소</th>
+									<td><span class="bluebox">간선</span></td>
+									<td>921, 110A, 604, 740, 753</td>
+									<td><span class="greenbox">지선</span></td>
+									<td>5714, 6712, 7016, 7613</td>
+								</tr>
+								<tr>
+									<th scope="row">신촌오거리.2호선신촌역</th>
+									<td><span class="bluebox">간선</span></td>
+									<td>270, 271A, 273, 602, 603, 707, 721</td>
+									<td><span class="greenbox">지선</span></td>
+									<td>6716, 7011, 7611, 7713</td>
+								</tr>
+							</tbody>
+							</table>
+						</div>
+					</div> 
+				</div> 
+			</div> 
+		</div>
+	</section>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class BoardDao extends SuperDao{
 		String sql = " select count(*) as cnt from boards " ; 
 		if (mode.equalsIgnoreCase("all") == false) { //equalsIgnoreCase는 true, flase로 나옴
 			//전체 검색이 아니면
-			sql += " where " + mode + "like '%" + keyword + "%' ";
+			sql += " where " + mode + " like '%" + keyword + "%' "; //+많을 땐 띄어쓰기 조심
 		}
 		
 		
@@ -39,8 +39,6 @@ public class BoardDao extends SuperDao{
 			}
 			
 		} catch (SQLException e) {			
-			SQLException err = (SQLException)e ;			
-			cnt = - err.getErrorCode() ;			
 			e.printStackTrace();
 			try {
 				conn.rollback(); 
@@ -66,15 +64,15 @@ public class BoardDao extends SuperDao{
 		ResultSet rs = null ;
 		
 		//sql 페이징 다시 보기
-		String sql = " select no, title, writer, password, content, regdate, reply, groupno, depth " ;
+		String sql = " select no, title, writer, password, content, regdate, reply, groupno, depth, remark " ;
 	      sql += " from ( " ;
-	      sql += " select no, title, writer, password, content, regdate, reply, groupno, depth, " ;
+	      sql += " select no, title, writer, password, content, regdate, reply, groupno, depth, remark, " ;
 	      sql += " rank() over(order by groupno desc) as ranking " ;
 	      sql += " from boards " ;
 	      
 	      if (mode.equalsIgnoreCase("all") == false) {
 			sql += " where " + mode + " like '%" + keyword + "%' ";
-		}
+	      }
 	      
 	      sql += " ) " ;
 	      sql += " where ranking between ?  and ?  " ;

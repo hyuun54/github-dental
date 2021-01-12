@@ -23,6 +23,10 @@
 		.re{font-size: 11px;}
 		.dark{color: #343a40;}
 		.gray{color: #6c757d;}
+		thead{
+			background-color: #6c757d;
+			color: #fff;
+		}
 	</style>
 	<script type="text/javascript">
 		function writeForm(){
@@ -50,90 +54,82 @@
 	<div class="container col-sm-offset-<%=myoffset%> col-sm-<%=mywidth%>">
 		<div class="panel panel-default panel-primary">
 			<div class="panel-heading">
-				<form class="form-inline" role="form">
-					<h2>게시물 목록</h2>
-				</form>
+				<h2 class="section-heading text-uppercase">온라인 상담</h2>
 			</div>
-			<table class="table table-striped table-hover">
+			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>답변 여부</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성 일자</th>
+						<th width="10%"></th>
+						<th width="60%">제목</th>
+						<th width="10%">작성자</th>
+						<th width="12%">작성 일자</th>
+						<th width="8%">답변</th>
 					</tr>
 				</thead>
-					<tr>
-						<td colspan="10" align="center">
-							<form class="form-inline" role="form" name="myform" action="<%=YesForm%>" method="get">
-								<input type="hidden" name="command" value="boCounselList">
-								<div class="form-group">
-									<select class="form-control" name="mode" id="mode">
-										<option value="all" selected="selected">-- 선택하세요---------
-										<option value="writer" >작성자
-										<option value="title" >제목									
-										<option value="content" >글 내용									
-									</select>
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control btn-xs" name="keyword"
-										id="keyword" placeholder="검색 키워드">
-								</div>
-								<button class="btn btn-default btn-warning" type="submit" onclick="search();">검색</button>
-								&nbsp;
-								<button class="btn btn-default btn-warning" type="button" onclick="searchAll();">전체 검색</button>
-								&nbsp;
-								<button class="btn btn-default btn-info" type="button"
-									onclick="writeForm();">글 쓰기</button>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							</form>
-						</td>
-					</tr>				
-				<c:forEach var="bean" items="${requestScope.lists}">
-					<tr>
-						<td>
-							<c:if test="${bean.reply == '미완료'}">
-								<span class="badge badge-dark">${bean.reply}</span>
-							</c:if>
-							<c:if test="${bean.reply == '답변 완료'}">
-								<span class="badge badge-info">${bean.reply}</span>
-							</c:if>
-						<td>
-							<c:forEach var="cnt" begin="1" end="${bean.depth}">
-								<span class="badge btn-secondary">re</span>
-							</c:forEach>
-							<c:if test="${whologin != 2}">
-								<a class="dark" href="<%=NoForm%>boDetailView&no=${bean.no}&${requestScope.parameters}">
-									${bean.title}
-								</a>
-							</c:if>
-							<c:if test="${whologin == 2}">
-								<a class="dark" href="<%=NoForm%>boDetailView&no=${bean.no}&${requestScope.parameters}">
-									${bean.title}
-								</a>
-							</c:if>
-						</td>
-						<td>
-							<c:if test="${whologin == 2}">
-								<a class="dark" href="#">
-									${bean.writer}
-								</a>
-							</c:if>
-							<c:if test="${whologin != 2}">
-								<p class="gray">${bean.writer}</p>
-							</c:if>
-						</td>
-						<td>${bean.regdate}</td>
-						<td>
-							<c:if test="${whologin == 2 && bean.reply == '미완료'}">
-								<a class="dark" href="<%=NoForm%>boReply&no=${bean.no}&${requestScope.parameters}&groupno=${bean.groupno}&orderno=${bean.orderno}&depth=${bean.depth}">
-									답변 
-								</a>
-							</c:if>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
+				<tr>
+					<td colspan="8" align="center">
+						<form class="form-inline" role="form" name="myform" action="<%=YesForm%>" method="get">
+							<input type="hidden" name="command" value="boCounselList">
+							<div class="form-group">
+								<select class="form-control" name="mode" id="mode">
+									<option value="all" selected="selected">-- 선택하세요---------
+									<option value="writer" >작성자
+									<option value="title" >제목									
+									<option value="content" >글 내용									
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control btn-xs" name="keyword"
+									id="keyword" placeholder="검색 키워드">
+							</div>
+							<button class="btn btn-default btn-warning" type="submit" onclick="search();">검색</button>
+							&nbsp;
+							<button class="btn btn-default btn-warning" type="button" onclick="searchAll();">전체 검색</button>
+							&nbsp;
+							<button class="btn btn-default btn-warning" type="button"
+								onclick="writeForm();">글 쓰기</button>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</form>
+					</td>
+				</tr>				
+			<c:forEach var="bean" items="${requestScope.lists}">
+				<tr>
+					<td>
+						<c:if test="${bean.reply == '미완료'}">
+							<span class="badge badge-dark">${bean.reply}</span>
+						</c:if>
+						<c:if test="${bean.reply == '답변 완료'}">
+							<span class="badge badge-info">${bean.reply}</span>
+						</c:if>
+					<td>
+						<c:forEach var="cnt" begin="1" end="${bean.depth}">
+							<span class="badge btn-secondary">re</span>
+						</c:forEach>
+						<a class="dark" href="<%=NoForm%>boDetailView&no=${bean.no}&${requestScope.parameters}">
+							${bean.title}
+						</a>
+					</td>
+					<td>
+						<c:if test="${whologin == 2}">
+							<a class="dark" href="<%=NoForm%>meDetailView&id=${bean.writer}">
+								${bean.writer}
+							</a>
+						</c:if>
+						<c:if test="${whologin != 2}">
+							<p class="gray">${bean.writer}</p>
+						</c:if>
+					</td>
+					<td>${bean.regdate}</td>
+					<td>
+						<c:if test="${whologin == 2 && bean.reply == '미완료'}">
+							<a class="dark" href="<%=NoForm%>boReply&no=${bean.no}&${requestScope.parameters}&groupno=${bean.groupno}&depth=${bean.depth}">
+								답변 
+							</a>
+						</c:if>
+					</td>
+				</tr>
+			</c:forEach>
+		</table>
 		</div>
 			<footer>${requestScope.pagingHtml}</footer>			
 	</div>

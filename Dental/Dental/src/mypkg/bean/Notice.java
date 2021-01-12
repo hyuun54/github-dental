@@ -1,13 +1,13 @@
 package mypkg.bean;
 
-public class notice {
+public class Notice {
 	private int no; //글번호
 	private String title; //제목
 	private String writer; //작성자
-	private String password; //글비밀번호
+	private String password = "1234"; //글비밀번호
 	private String content; //글내용
 	private int readhit; //조회수
-	private int regdate; //작성일자
+	private String regdate; //작성일자
 	
 	@Override
 	public String toString() {
@@ -16,7 +16,7 @@ public class notice {
 		return imsi;
 	}
 	
-	public notice() {
+	public Notice() {
 			
 	}
 	
@@ -56,10 +56,10 @@ public class notice {
 	public void setReadhit(int readhit) {
 		this.readhit = readhit;
 	}
-	public int getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(int regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
 }
